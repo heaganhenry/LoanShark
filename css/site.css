@@ -1,0 +1,137 @@
+:root {
+    --primary-color: #000000;
+    --secondary-color: #f55b14;
+    --dark-color: #292929;
+    --white-color: #e7e7e7;
+}
+
+.logoFont {
+    font-family: xyz;
+}
+
+body {
+    color: var(--dark-color);
+}
+
+nav {
+    background-color: var(--dark-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--primary-color);
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    display: block;
+    font-weight: bold;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    color: var(--primary-color);
+}
+
+h1,
+.h1 {
+    font-size: 2.00em;
+    margin-block-start: .67em;
+    margin-block-end: .67em;
+}
+
+h2,
+.h2 {
+    font-size: 1.50em;
+    margin-block-start: .83em;
+    margin-block-end: .83em;
+}
+
+h3,
+.h3 {
+    font-size: 1.17em;
+    margin-block-start: .1em;
+    margin-block-end: .1em;
+}
+
+h4,
+.h4 {
+    font-size: 1.00em;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+}
+
+h5,
+.h5 {
+    font-size: 0.83em;
+    margin-block-start: 1.67em;
+    margin-block-end: 1.67em;
+}
+
+h6,
+.h6 {
+    font-size: 0.67em;
+    margin-block-start: 2.33em;
+    margin-block-end: 2.33em;
+}
+
+.bsicon {
+    color: #8312FA;
+}
+
+.jsicon {
+    color: #F0DB4F;
+}
+
+.htmlicon {
+    color: #E44D26;
+}
+
+.cssicon {
+    color: #0A71B8;
+}
+
+.sticky-nav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+main>.container {
+    padding: 60px 15px 0;
+    margin-bottom: 5rem;
+}
+
+.checklist>li i {
+    color: var(--secondary-color);
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+footer {
+    color: var(--white-color);
+    background-color: var(--dark-color);
+    padding-right: 1rem;
+}
+
+footer .social>a {
+    color: var(--white-color);
+    opacity: 0.75;
+}
+
+footer .social>a:hover {
+    opacity: 0.90;
+    color: var(--secondary-color);
+}
