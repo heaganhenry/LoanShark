@@ -11,7 +11,7 @@ function getValues() {
 // logic function
 function calculateLoan(loanAmount, payments, rate){
     // initialize values
-    let monthlyPayment = (loanAmount * (rate / 1200)) / (1 - Math.pow(1 + (rate / 1200), -payments));
+    let monthlyPayment = (loanAmount * (rate / 1200)) / (1 - (1 + (rate / 1200)) ** -payments);
     let balance = loanAmount;
     let principal = 0;
     let interest = 0;

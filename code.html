@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 	<head>
-		<title>App Name: A Coding Project by Heagan Henry</title>
+		<title>Loan Shark: A Coding Project by Heagan Henry</title>
 		<!-- Required meta tags -->
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -31,7 +31,7 @@
 						width="30"
 						height="30"
 					/>
-					APP NAME</a
+					LOAN SHARK</a
 				>
 				<button
 					class="navbar-toggler"
@@ -70,22 +70,83 @@
 		<!-- Main Section -->
 		<main class="flex-shrink-0">
 			<div class="container py-5 px-5 mt-5">
-				<span class="h2 border-bottom border-1 border-dark">The Code for APP NAME</span>
+				<span class="h2 border-bottom border-1 border-dark">The Code for LOAN SHARK</span>
 				<div class="row row-cols-1 row-cols-lg-2 gy-3">
 					<div class="col-lg-8">
 						<pre class="line-numbers">
                             <code class="language-javascript">
-                                // Call Hello World
-                                function helloWorld() {
-                                    alert("Hello World");
-                                }
+								// controller function
+								function getValues() {
+									let loanAmount = parseFloat(document.getElementById("loanAmount").value);
+									let payments = parseFloat(document.getElementById("payments").value);
+									let rate = parseFloat(document.getElementById("rate").value);
+								
+									let results = calculateLoan(loanAmount, payments, rate);
+									displayLoan(results);
+								}
+								
+								// logic function
+								function calculateLoan(loanAmount, payments, rate){
+									// initialize values
+									let monthlyPayment = (loanAmount * (rate / 1200)) / (1 - Math.pow(1 + (rate / 1200), -payments));
+									let balance = loanAmount;
+									let principal = 0;
+									let interest = 0;
+									let totalInterest = 0;
+								
+									let resultsObj = {};
+									let resultsHtml = "";
+									// loop from 1 to payments
+									for (let i = 1; i <= payments; i++){
+										//  calculate values
+										let month = i;
+										interest = balance * (rate / 1200);
+										totalInterest += interest;
+										principal = monthlyPayment - interest;
+										balance = balance - principal;
+								
+										//  store values in html string (not properly displayed using prism, see source)
+										resultsHtml += `<tr><td>${month}</td><td>${monthlyPayment.toFixed(2)}</td><td>${principal.toFixed(2)}</td>
+										<td>${interest.toFixed(2)}</td><td>${totalInterest.toFixed(2)}</td><td>${balance.toFixed(2)}</td></tr>`;
+								
+										
+									}
+									
+									//  store totals and html string in an object
+									resultsObj.monthlyPayment = monthlyPayment;
+									resultsObj.totalPrincipal = loanAmount;
+									resultsObj.totalInterest = totalInterest;
+									resultsObj.totalCost = loanAmount + totalInterest;
+									resultsObj.resultsHtml = resultsHtml;
+									
+									// return object
+									return resultsObj;
+								}
+								
+								// display function
+								function displayLoan(resultsObj) {
+									// clear table
+									let tableBody = document.getElementById("tableBody");
+									tableBody.innerHTML = "";
+								
+									// insert html 
+									tableBody.innerHTML = resultsObj.resultsHtml;
+								
+									// insert totals
+									document.getElementById("monthlyPayment").innerHTML = `$${resultsObj.monthlyPayment.toFixed(2)}`;
+									document.getElementById("totalPrincipal").innerHTML = `$${resultsObj.totalPrincipal.toFixed(2)}`;
+									document.getElementById("totalInterest").innerHTML = `$${resultsObj.totalInterest.toFixed(2)}`;
+									document.getElementById("totalCost").innerHTML = `$${resultsObj.totalCost.toFixed(2)}`;
+								}
                             </code>
                         </pre>
 					</div>
 					<div class="col-lg-4">
-						<p style="font-size: large">The Code is structured in one function.</p>
-						<span class="h4" style="font-size: large">Hello World</span>
-						<p>helloWorld is a function that displays an alert with a message of "Hello World".</p>
+						<p class="invisible" style="font-size: large">The Code is structured in one function.</p>
+						<span class="h4 invisible" style="font-size: large">Hello World</span>
+						<p class="invisible">
+							helloWorld is a function that displays an alert with a message of "Hello World".
+						</p>
 					</div>
 				</div>
 			</div>
