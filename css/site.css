@@ -5,16 +5,16 @@
     --white-color: #e7e7e7;
 }
 
-.logoFont {
-    font-family: xyz;
-}
-
 body {
     color: var(--dark-color);
 }
 
 nav {
     background-color: var(--dark-color);
+}
+
+thead>tr> {
+    background-color: #0A71B8;
 }
 
 h1,
