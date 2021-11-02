@@ -28,11 +28,9 @@ function calculateLoan(loanAmount, payments, rate){
         principal = monthlyPayment - interest;
         balance = balance - principal;
 
-        //  store values in html string
+        //  store values in html string (not properly displayed using prism, see source)
         resultsHtml += `<tr><td>${month}</td><td>${monthlyPayment.toFixed(2)}</td><td>${principal.toFixed(2)}</td>
         <td>${interest.toFixed(2)}</td><td>${totalInterest.toFixed(2)}</td><td>${balance.toFixed(2)}</td></tr>`;
-
-        
     }
     
     //  store totals and html string in an object
@@ -60,4 +58,18 @@ function displayLoan(resultsObj) {
     document.getElementById("totalPrincipal").innerHTML = `$${resultsObj.totalPrincipal.toFixed(2)}`;
     document.getElementById("totalInterest").innerHTML = `$${resultsObj.totalInterest.toFixed(2)}`;
     document.getElementById("totalCost").innerHTML = `$${resultsObj.totalCost.toFixed(2)}`;
+}
+
+function resetApp() {
+    // clear fields
+    document.getElementById("monthlyPayment").innerHTML = "";
+    document.getElementById("totalPrincipal").innerHTML = "";
+    document.getElementById("totalInterest").innerHTML = "";
+    document.getElementById("totalCost").innerHTML = "";
+    document.getElementById("tableBody").innerHTML = "";
+
+    // reset defaults
+    document.getElementById("loanAmount").innerHTML = "15000";
+    document.getElementById("payments").innerHTML = "60";
+    document.getElementById("rate").innerHTML = "3";
 }

@@ -97,10 +97,9 @@
 								<label class="form-label" for="text" aria-label="Rate">Rate:</label>
 								<input class="form-control" type="number" id="rate" value="3" aria-label="Rate" />
 							</div>
-							<div class="col d-flex justify-content-end mb-2">
-								<button id="btnSubmit" type="button" class="btn btn-outline-primary mt-3">
-									Calculate
-								</button>
+							<div class="col d-flex justify-content-end my-3">
+								<button id="btnReset" type="button" class="btn btn-outline-primary me-3">Reset</button>
+								<button id="btnSubmit" type="button" class="btn btn-outline-primary">Calculate</button>
 							</div>
 						</form>
 					</div>
@@ -110,7 +109,11 @@
 								<span class="h4">Your Monthly Payments</span>
 							</div>
 							<div class="col-12">
-								<span id="monthlyPayment" class="d-flex justify-content-center my-3">
+								<span
+									id="monthlyPayment"
+									class="d-flex justify-content-center mb-2"
+									style="font-size: xx-large; font-weight: bold"
+								>
 									<!-- Monthly payment displayed here -->
 								</span>
 							</div>
@@ -125,7 +128,7 @@
 										<!-- Total interest displayed here -->
 									</div>
 									<div class="col-6">Total Cost</div>
-									<div id="totalCost" class="col-6">
+									<div id="totalCost" class="col-6" style="font-weight: bold">
 										<!-- Total cost displayed here -->
 									</div>
 								</div>
@@ -208,6 +211,7 @@
 		<!-- Custom JS -->
 		<script src="js/site.js"></script>
 		<script>
+			document.getElementById("btnReset").addEventListener("click", resetApp);
 			document.getElementById("btnSubmit").addEventListener("click", getValues);
 		</script>
 	</body>
