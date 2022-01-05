@@ -1,220 +1,183 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100">
-	<head>
-		<title>Loan Shark: A Coding Project by Heagan Henry</title>
-		<!-- Required meta tags -->
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-		<!-- Bootstrap CSS -->
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
-			crossorigin="anonymous"
-		/>
+<head>
+	<title>Loan Shark: A Coding Project by Heagan Henry</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-		<link rel="stylesheet" href="css/site.css" />
-		<link rel="icon" href="img/favicon.ico?" />
-	</head>
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
 
-	<body class="d-flex flex-column h-100">
-		<!-- Nav Section -->
-		<nav class="navbar navbar-expand-md navbar-dark fixed-top">
-			<div class="container-fluid">
-				<a class="navbar-brand logoFont" href="#"
-					><img
-						src="img/HFS_Logo.png"
-						alt="Heagan Logo"
-						class="d-inline-block align-text-top me-1"
-						width="30"
-						height="30"
-					/>
-					LOAN SHARK</a
-				>
-				<button
-					class="navbar-toggler"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#navbarCollapse"
-					aria-controls="navbarCollapse"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
-				>
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarCollapse">
-					<ul class="navbar-nav me-auto mb-2 mb-md-0">
-						<li class="nav-item">
-							<a class="nav-link" href="index.html">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="app.html">The App</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="code.html">The Code</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" target="_blank" href="https://github.com/heaganhenry/LoanShark"
-								>Git Repo</a
-							>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" target="_blank" href="#">About</a>
-						</li>
-					</ul>
-				</div>
+	<link rel="stylesheet" href="css/site.css" />
+	<link rel="icon" href="img/favicon.ico?" />
+</head>
+
+<body class="d-flex flex-column h-100">
+	<!-- Nav Section -->
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+		<div class="container-fluid">
+			<a class="navbar-brand logoFont" href="#"><img src="img/HFS_Logo.png" alt="Heagan Logo"
+					class="d-inline-block align-text-top me-1" width="30" height="30" />
+				LOAN SHARK</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+				aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav me-auto mb-2 mb-md-0">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="app.html">The App</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="code.html">The Code</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" target="_blank" href="https://github.com/heaganhenry/LoanShark">Git Repo</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" target="_blank" href="#">About</a>
+					</li>
+				</ul>
 			</div>
-		</nav>
-		<!-- Main Section -->
-		<main class="flex-shrink-0">
-			<div class="container mt-5">
-				<div class="row row-cols-1 row-cols-lg-2">
-					<div class="col-lg-12">
-						<h1>Loan Calculator</h1>
-					</div>
-					<div class="col-12 col-lg-6">
-						<form class="row bg-light p-1">
-							<div class="col-12">
-								<label class="form-label" for="text" aria-label="Loan Amount">Loan Amount:</label>
-								<input
-									class="form-control"
-									type="number"
-									id="loanAmount"
-									value="15000"
-									aria-label="Loan Amount"
-								/>
-							</div>
-							<div class="col-12">
-								<label class="form-label" for="text" aria-label="Payments">Payments:</label>
-								<input
-									class="form-control"
-									type="number"
-									id="payments"
-									value="60"
-									aria-label="Payments"
-								/>
-							</div>
-							<div class="col-12">
-								<label class="form-label" for="text" aria-label="Rate">Rate:</label>
-								<input class="form-control" type="number" id="rate" value="3" aria-label="Rate" />
-							</div>
-							<div class="col d-flex justify-content-end my-3">
-								<button id="btnReset" type="button" class="btn btn-outline-primary me-3">Reset</button>
-								<button id="btnSubmit" type="button" class="btn btn-outline-primary">Calculate</button>
-							</div>
-						</form>
-					</div>
-					<div class="col-12 col-lg-6">
-						<div class="row">
-							<div class="col-12 d-flex justify-content-center">
-								<span class="h4">Your Monthly Payments</span>
-							</div>
-							<div class="col-12">
-								<span
-									id="monthlyPayment"
-									class="d-flex justify-content-center mb-2"
-									style="font-size: xx-large; font-weight: bold"
-								>
-									<!-- Monthly payment displayed here -->
-								</span>
-							</div>
-							<div class="col-12">
-								<div class="row">
-									<div class="col-6">Total Principal</div>
-									<div id="totalPrincipal" class="col-6">
-										<!-- Total principal displayed here -->
-									</div>
-									<div class="col-6">Total Interest</div>
-									<div id="totalInterest" class="col-6">
-										<!-- Total interest displayed here -->
-									</div>
-									<div class="col-6">Total Cost</div>
-									<div id="totalCost" class="col-6" style="font-weight: bold">
-										<!-- Total cost displayed here -->
-									</div>
+		</div>
+	</nav>
+	<!-- Main Section -->
+	<main class="flex-shrink-0">
+		<div class="container mt-5">
+			<div class="row row-cols-1 row-cols-lg-2">
+				<div class="col-lg-12">
+					<h1>Loan Calculator</h1>
+				</div>
+				<div class="col-12 col-lg-6">
+					<form class="row bg-light p-1">
+						<div class="col-12">
+							<label class="form-label" for="text" aria-label="Loan Amount">Loan Amount:</label>
+							<input class="form-control" type="number" id="loanAmount" value="15000"
+								aria-label="Loan Amount" />
+						</div>
+						<div class="col-12">
+							<label class="form-label" for="text" aria-label="Payments">Payments:</label>
+							<input class="form-control" type="number" id="payments" value="60" aria-label="Payments" />
+						</div>
+						<div class="col-12">
+							<label class="form-label" for="text" aria-label="Rate">Rate:</label>
+							<input class="form-control" type="number" id="rate" value="3" aria-label="Rate" />
+						</div>
+						<div class="col d-flex justify-content-end my-3">
+							<button id="btnReset" type="button" class="btn btn-outline-primary me-3">Reset</button>
+							<button id="btnSubmit" type="button" class="btn btn-outline-primary">Calculate</button>
+						</div>
+					</form>
+				</div>
+				<div class="col-12 col-lg-6">
+					<div class="row">
+						<div class="col-12 d-flex justify-content-center">
+							<span class="h4">Your Monthly Payments</span>
+						</div>
+						<div class="col-12">
+							<span id="monthlyPayment" class="d-flex justify-content-center mb-2"
+								style="font-size: xx-large; font-weight: bold">
+								<!-- Monthly payment displayed here -->
+							</span>
+						</div>
+						<div class="col-12">
+							<div class="row">
+								<div class="col-6">Total Principal</div>
+								<div id="totalPrincipal" class="col-6">
+									<!-- Total principal displayed here -->
+								</div>
+								<div class="col-6">Total Interest</div>
+								<div id="totalInterest" class="col-6">
+									<!-- Total interest displayed here -->
+								</div>
+								<div class="col-6">Total Cost</div>
+								<div id="totalCost" class="col-6" style="font-weight: bold">
+									<!-- Total cost displayed here -->
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="row table-responsive mt-3">
-					<table class="table table-striped">
-						<thead class="table-primary">
-							<tr>
-								<th>Month</th>
-								<th>Payment</th>
-								<th>Principal</th>
-								<th>Interest</th>
-								<th>Total Interest</th>
-								<th>Balance</th>
-							</tr>
-						</thead>
-						<tbody id="tableBody">
-							<!-- Amortization schedule displayed here -->
-						</tbody>
-					</table>
-				</div>
 			</div>
-		</main>
-		<!-- Footer Section -->
-		<footer class="footer mt-auto py-3 bg-dark sticky-footer">
-			<div class="container-fluid">
-				<div class="row row-cols-1 row-cols-lg-3 gy-2">
-					<div class="col order-last order-lg-first text-light">
-						<div><span class="text-muted">&copy;2021</span> Heagan Henry | heaganhenry@gmail.com</div>
-					</div>
-					<div class="col d-flex align-items-center justify-content-start justify-content-lg-center">
-						<img src="img/HFS_Mark_White_Crop.png" alt="Heagan Henry Logo" height="40" />
-					</div>
-					<div class="col d-flex align-items-center justify-content-start justify-content-lg-end">
-						<div class="row">
-							<div class="col social">
-								<a href="https://www.linkedin.com/in/heaganhenry/" target="_blank"
-									><i class="fab fa-linkedin fa-2x"></i
-								></a>
-							</div>
-							<div class="col social">
-								<a href="https://github.com/heaganhenry" target="_blank"
-									><i class="fab fa-github fa-2x"></i
-								></a>
-							</div>
-							<div class="col social">
-								<a href="https://twitter.com/HeaganHenry" target="_blank"
-									><i class="fab fa-twitter fa-2x"></i
-								></a>
-							</div>
+			<div class="row table-responsive mt-3">
+				<table class="table table-striped">
+					<thead class="table-primary">
+						<tr>
+							<th>Month</th>
+							<th>Payment</th>
+							<th>Principal</th>
+							<th>Interest</th>
+							<th>Total Interest</th>
+							<th>Balance</th>
+						</tr>
+					</thead>
+					<tbody id="tableBody">
+						<!-- Amortization schedule displayed here -->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</main>
+	<!-- Footer Section -->
+	<footer class="footer mt-auto py-3 bg-dark sticky-footer">
+		<div class="container-fluid">
+			<div class="row row-cols-1 row-cols-lg-3 gy-2">
+				<div class="col order-last order-lg-first text-light">
+					<div><span class="text-muted">&copy;2021</span> Heagan Henry | heaganhenry@gmail.com</div>
+				</div>
+				<div class="col d-flex align-items-center justify-content-start justify-content-lg-center">
+					<img src="img/hhbrand.png" alt="Heagan Henry Logo" height="40" />
+				</div>
+				<div class="col d-flex align-items-center justify-content-start justify-content-lg-end">
+					<div class="row">
+						<div class="col social">
+							<a href="https://www.linkedin.com/in/heaganhenry/" target="_blank"><i
+									class="fab fa-linkedin fa-2x"></i></a>
+						</div>
+						<div class="col social">
+							<a href="https://github.com/heaganhenry" target="_blank"><i
+									class="fab fa-github fa-2x"></i></a>
+						</div>
+						<div class="col social">
+							<a href="https://twitter.com/HeaganHenry" target="_blank"><i
+									class="fab fa-twitter fa-2x"></i></a>
 						</div>
 					</div>
 				</div>
 			</div>
-		</footer>
+		</div>
+	</footer>
 
-		<!-- Template row -->
-		<template id="lsTemplate">
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-		</template>
+	<!-- Template row -->
+	<template id="lsTemplate">
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</template>
 
-		<!-- Bootstrap JS -->
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-			crossorigin="anonymous"
-		></script>
-		<!-- Fontawesome JS -->
-		<script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
-		<!-- Custom JS -->
-		<script src="js/site.js"></script>
-		<script>
-			document.getElementById("btnReset").addEventListener("click", resetApp);
-			document.getElementById("btnSubmit").addEventListener("click", getValues);
-		</script>
-	</body>
+	<!-- Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+	</script>
+	<!-- Fontawesome JS -->
+	<script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
+	<!-- Custom JS -->
+	<script src="js/site.js"></script>
+	<script>
+		document.getElementById("btnReset").addEventListener("click", resetApp);
+		document.getElementById("btnSubmit").addEventListener("click", getValues);
+	</script>
+</body>
+
 </html>
